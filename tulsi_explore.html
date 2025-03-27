@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Tulsi - Nutural Herbs</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Remove bullet points from unordered lists */
+        .contact-content ul {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 0; /* Removes default padding */
+        }
+
+        .contact-content li {
+            margin-bottom: 10px; /* Adds spacing between list items */
+        }
+
+        /* Style for the Tulsi image with a frame */
+        .tulsi-image {
+            width: 100%; /* Make the image responsive */
+            max-width: 400px; /* Limit the maximum width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 15px; /* Rounded corners */
+            border: 8px solid #bfbfbf; /* Light gray border */
+            padding: 5px; /* Space between image and border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            display: block; /* Center the image */
+            margin: 20px auto; /* Center the image and add spacing */
+            background-color: #155328; /* Background color for padding */
+        }
+
+        /* Adjust the header spacing */
+        header h1 {
+            margin-bottom: 20px; /* Add spacing below the title */
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem; /* Increase font size */
+            color: white; /* White color for the heading */
+            text-align: center; /* Center the heading */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="menu">
+            <a href="./main.html">Home</a>
+            <a href="./About Us.html">About</a>
+            <a href="./contact.html">Contact us</a>
+            <a href="./sign.html">Sign up</a>
+            <a href="./log in.html">Log in</a>
+            <a href="#" id="logout-link" style="display: none;">Logout</a>
+        </div>
+        <div class="shopping">
+            <img src="basket.png">
+            <span class="quantity">0</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <!-- Space for logo -->
+            <img src="logo_white.png" alt="Nutural Herbs Logo" class="logo">
+            <h1>Tulsi - Ocimum Tenuiflorum</h1>
+        </header>
+
+        <div class="contact-content">
+            <!-- Tulsi Image with Frame -->
+            <img src="tulsi1.png" alt="Tulsi" class="tulsi-image">
+
+            <h2>Benefits of Tulsi</h2>
+            <p>Tulsi is a versatile herb known for its numerous health benefits. Here are some of the key benefits:</p>
+            <ul>
+                <li><strong>🌿 Relieves Bloating & Gas:</strong> Reduces stomach gas and discomfort by promoting healthy gut function.</li>
+                <li><strong>🔥 Improves Digestion:</strong> Stimulates the release of digestive enzymes and juices.</li>
+                <li><strong>🌾 Soothes Acid Reflux:</strong> Neutralizes stomach acid, reducing heartburn and indigestion.</li>
+                <li><strong>💧 Prevents Constipation:</strong> Acts as a mild laxative, improving bowel movements.</li>
+                <li><strong>🌿 Reduces Stress:</strong> Boosts immunity and fights infections.</li>
+            </ul>
+
+            <h2>Ways to Use Tulsi</h2>
+            <p>Tulsi can be used in various forms to harness its benefits:</p>
+            <ul>
+                <li><strong>✅ Tulsi Tea:</strong> For bloating and acid reflux.</li>
+                <li><strong>✅ Tulsi & Ginger Tea:</strong> For nausea and indigestion.</li>
+                <li><strong>✅ Tulsi Seed Water:</strong> For detox and gut health.</li>
+            </ul>
+
+            <h2>Precautions</h2>
+            <p>While Tulsi is beneficial, it's important to use it wisely:</p>
+            <ul>
+                <li><strong>❗ Don’t Overconsume:</strong> More than 2–3 cups of tea daily may lower blood sugar levels.</li>
+                <li><strong>⚠️ Mild Heartburn:</strong> May occur if taken in excess.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript function for the back button
+        function goBack() {
+            window.history.back(); // Go back to the previous page
+        }
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

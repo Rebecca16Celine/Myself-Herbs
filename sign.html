@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Apply custom fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f0f0f0; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Image Container */
+        .image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the image behind the container */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+        /* Container for Sign-Up */
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 40px;
+            width: 450px; /* Increased width */
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Align text to the left */
+            z-index: 1; /* Place the container above the image */
+            position: relative;
+        }
+
+        h2 {
+            color: #4d7f07; /* Darker green for headings */
+            margin-bottom: 20px;
+            text-align: left; /* Align heading to the left */
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            text-align: left;
+            font-weight: bold;
+            color: #4d7f07; /* Darker green for labels */
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #4d7f07; /* Darker green border */
+            border-radius: 5px;
+            background: #fff;
+            font-size: 16px;
+        }
+
+        button {
+            background: #4d7f07; /* Darker green for buttons */
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3a5f05; /* Even darker green on hover */
+        }
+
+        #responseMessage {
+            margin-top: 20px;
+            color: #4d7f07; /* Darker green for messages */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="signup-page">
+    <div class="image-container">
+        <img src="bgfor2.jpg" alt="Background Image">    </div>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create a password" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Enter your address" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p id="responseMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Example: After successful signup
+        function onSignupSuccess() {
+            // Set the login status to true (automatically log them in)
+            localStorage.setItem('isLoggedIn', 'true');
+            // Redirect to the herbs page
+            window.location.href = './herbs.html';
+        }
+    
+        // Attach this function to your signup form submission
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Perform signup validation (e.g., create a new user)
+            // If signup is successful, call onSignupSuccess()
+            onSignupSuccess();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Garlic - Nutural Herbs</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Remove bullet points from unordered lists */
+        .contact-content ul {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 0; /* Removes default padding */
+        }
+
+        .contact-content li {
+            margin-bottom: 10px; /* Adds spacing between list items */
+        }
+
+        /* Style for the Garlic image with a frame */
+        .garlic-image {
+            width: 100%; /* Make the image responsive */
+            max-width: 400px; /* Limit the maximum width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 15px; /* Rounded corners */
+            border: 8px solid #bfbfbf; /* Light gray border */
+            padding: 5px; /* Space between image and border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            display: block; /* Center the image */
+            margin: 20px auto; /* Center the image and add spacing */
+            background-color: #155328; /* Background color for padding */
+        }
+
+        /* Adjust the header spacing */
+        header h1 {
+            margin-bottom: 20px; /* Add spacing below the title */
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem; /* Increase font size */
+            color: white; /* White color for the heading */
+            text-align: center; /* Center the heading */
+        }
+
+        /* Style for the back button */
+        .back-button {
+            font-weight: bold; /* Make the text bold */
+            color: white; /* White text color */
+            text-decoration: none; /* Remove underline */
+            margin-right: 15px; /* Add spacing between the back button and other links */
+            font-size: 16px; /* Adjust font size */
+        }
+
+        .back-button:hover {
+            color: #032308; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="menu">
+            <!-- Back Button -->
+            <a href="#" onclick="goBack()" class="back-button">← Back</a>
+            <a href="./main.html">Home</a>
+            <a href="./About Us.html">About</a>
+            <a href="./contact.html">Contact us</a>
+            <a href="./sign.html">Sign up</a>
+            <a href="./log in.html">Log in</a>
+            <a href="#" id="logout-link" style="display: none;">Logout</a>
+        </div>
+        <div class="shopping">
+            <img src="basket.png">
+            <span class="quantity">0</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <!-- Space for logo -->
+            <img src="logo_white.png" alt="Nutural Herbs Logo" class="logo">
+            <h1>Garlic - Allium Sativum</h1>
+        </header>
+
+        <div class="contact-content">
+            <!-- Garlic Image with Frame -->
+            <img src="garlic1.png" alt="Garlic" class="garlic-image">
+
+            <h2>Benefits of Garlic</h2>
+            <p>Garlic is a powerful herb known for its numerous health benefits. Here are some of the key benefits:</p>
+            <ul>
+                <li><strong>🩸 Improves Blood Circulation:</strong> Enhances immune response by increasing blood flow.</li>
+                <li><strong>🌟 Detoxifies the Body:</strong> Flushes out toxins, reducing stress on the immune system.</li>
+                <li><strong>🛡️ Boosts White Blood Cells:</strong> Stimulates production of immune cells that fight infection.</li>
+            </ul>
+
+            <h2>Ways to Use Garlic</h2>
+            <p>Garlic can be used in various forms to harness its benefits:</p>
+            <ul>
+                <li><strong>✅ Raw Garlic:</strong> For daily immunity boost.</li>
+                <li><strong>✅ Garlic & Honey Mix:</strong> For infections and immunity.</li>
+                <li><strong>✅ Garlic Tea:</strong> For cold and flu relief.</li>
+            </ul>
+
+            <h2>Precautions</h2>
+            <p>While Garlic is beneficial, it's important to use it wisely:</p>
+            <ul>
+                <li><strong>🚫 Use in Moderation:</strong> Excessive use may cause heartburn or upset stomach.</li>
+                <li><strong>⚠️ Blood Pressure:</strong> May lower blood pressure — caution for those on medication.</li>
+                <li><strong>⚠️ Pregnancy:</strong> Not suitable for pregnant women without consulting a doctor.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function for the back button
+        function goBack() {
+            window.history.back(); // Go back to the previous page
+        }
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>

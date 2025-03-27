@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Invoice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white-100 p-8">
+
+  <div class="max-w-4xl mx-auto" style="background-color: #b7d38e; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-700">BILL</h1>
+        <div class="mt-2">
+          <p class="text-sm text-gray-500">BILL NUMBER:</p>
+          <p class="text-lg text-gray-700" id="bill-number">00001</p>
+        </div>
+      </div>
+      <div class="text-right">
+        <p class="text-sm text-gray-500">DATE OF ISSUE:</p>
+        <p class="text-lg text-gray-700" id="date-issue">DD/MM/YYYY</p>
+
+        <script>
+          function updateDate() {
+            const dateElement = document.getElementById('date-issue');
+            const now = new Date();
+        
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const year = now.getFullYear();
+        
+            const formattedDate = `${day}/${month}/${year}`;
+            dateElement.textContent = formattedDate;
+          }
+        
+          // Update immediately
+          updateDate();
+        
+          // Update every second (optional for "real-time" but date only changes daily)
+          setInterval(updateDate, 1000);
+        </script>
+        
+      </div>
+      <div>
+        <img alt="Company Logo" class="w-24 h-24 object-cover" height="10"
+          src="logo_black.png"
+          width="100" />
+      </div>
+    </div>
+
+    <!-- Addresses -->
+    <div class="flex justify-between mb-8">
+      <div>
+        <p class="text-sm text-gray-500">BILLED TO</p>
+        <p class="text-lg text-gray-700">Client name</p>
+        <p class="text-lg text-gray-700">123 Your Street</p>
+        <p class="text-lg text-gray-700">City, State, Country</p>
+        <p class="text-lg text-gray-700">Zip Code</p>
+        <p class="text-lg text-gray-700">Phone</p>
+      </div>
+      <div>
+        <p class="text-sm text-gray-500">NUTURAL HERBS</p>
+        <!--p class="text-lg text-gray-700">Building name</p>
+        <p class="text-lg text-gray-700">123 Your Street</p-->
+        <p class="text-lg text-gray-700">Mumbai,Maharashtra,India</p>
+        <p class="text-lg text-gray-700">Zip Code</p>
+        <p class="text-lg text-gray-700">+91-123-456-7890</p>
+        <p class="text-lg text-gray-700">nuturalherbs04@email.com</p>
+        <!--p class="text-lg text-gray-700">yourwebsite.com</p-->
+      </div>
+    </div>
+
+    <!-- Invoice Table -->
+    <table class="w-full mb-8">
+      <thead>
+        <tr class="bg-gray-200 text-gray-600 text-left">
+          <th class="py-2 px-4">Description</th>
+          <th class="py-2 px-4">Unit cost</th>
+          <th class="py-2 px-4">QTY</th>
+          <th class="py-2 px-4">Amount</th>
+        </tr>
+      </thead>
+      <tbody id="invoice-items">
+        <!-- Dynamic content will be inserted here -->
+      </tbody>
+    </table>
+
+    <!-- Totals -->
+    <div class="flex justify-between mb-8">
+      <div></div>
+      <div class="text-right">
+        <div class="flex justify-between">
+          <p class="text-lg text-gray-700">Subtotal</p>
+          <p class="text-lg text-gray-700" id="subtotal">₹0.00</p>
+        </div>
+        <div class="flex justify-between">
+          <p class="text-lg text-gray-700">Discount</p>
+          <p class="text-lg text-gray-700" id="discount">₹/p>0.00</p>
+        </div>
+        <div class="flex justify-between mt-4">
+          <p class="text-xl font-bold text-gray-700">BILL TOTAL</p>
+          <p class="text-xl font-bold text-gray-700" id="bill-total">₹0.00</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript to Populate Invoice -->
+  <script>
+    // Get data from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const totalPrice = localStorage.getItem('totalPrice') || '0';
+
+    const itemsContainer = document.getElementById('invoice-items');
+    const subtotalEl = document.getElementById('subtotal');
+    const billTotalEl = document.getElementById('bill-total');
+    const discountEl = document.getElementById('discount');
+
+    // Fill Bill number and Date
+    document.getElementById('bill-number').innerText = 'INV-' + String(Math.floor(Math.random() * 100000)).padStart(5, '0');
+    document.getElementById('date-issue').innerText = new Date().toLocaleDateString();
+
+    let subtotal = 0;
+
+    if (cartItems.length === 0) {
+      itemsContainer.innerHTML = `<tr><td colspan="4" class="py-4 text-center text-gray-700">No items found in cart.</td></tr>`;
+    } else {
+      cartItems.forEach(item => {
+        const amount = item.quantity * (item.price / item.quantity); // Get unit price * qty
+        subtotal += amount;
+
+        const row = document.createElement('tr');
+        row.classList.add('border-b');
+
+        row.innerHTML = `
+          <td class="py-2 px-4">${item.name}</td>
+          <td class="py-2 px-4">₹${(item.price / item.quantity).toLocaleString()}</td>
+          <td class="py-2 px-4">${item.quantity}</td>
+          <td class="py-2 px-4">₹${item.price.toLocaleString()}</td>
+        `;
+
+        itemsContainer.appendChild(row);
+      });
+    }
+
+    // Assuming no discounts for now
+    const discount = 0;
+    const billTotal = subtotal - discount;
+
+    // Update the totals
+    subtotalEl.innerText = `₹${subtotal.toLocaleString()}`;
+    discountEl.innerText = `₹${discount.toLocaleString()}`;
+    billTotalEl.innerText = `₹${billTotal.toLocaleString()}`;
+  </script>
+
+</body>
+</html>

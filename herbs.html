@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutural Herbs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="menu">
+            <a href="./main.html">Home</a>
+            <a href="About Us.html">About</a>
+            <a href="Contact.html">Contact us</a>
+            <a href="./sign.html">Sign up</a>
+            <a href="./log in.html">Log in</a>
+            <a href="#" id="logout-link" style="display: none;">Logout</a> <!-- Initially hidden -->
+        </div>
+        <div class="shopping">
+            <img src="basket.png">
+            <span class="quantity">0</span>
+        </div>
+    </div>
+    
+    
+    <div class="categories">
+        <div class="category" role="button" tabindex="0">All</div>
+        <div class="category" role="button" tabindex="0">Skin</div>
+        <div class="category" role="button" tabindex="0">Menstruation</div>
+        <div class="category" role="button" tabindex="0">Digestion</div>
+        <div class="category" role="button" tabindex="0">Immunity</div>
+        <div class="category" role="button" tabindex="0">Stress</div>
+    </div>
+    
+    
+    <div class="container">
+        <header>
+            <h1>Herbs For You</h1>
+        </header>
+        
+        <!-- This is where your products list shows -->
+        <div class="list">
+            <!-- Items will be dynamically added here -->
+        </div>
+
+        <!-- ADDING PRODUCT DETAILS CONTAINER HERE -->
+        <div id="product-container">
+            
+            <!-- Product details can be dynamically shown here -->
+        </div>
+    </div>
+    
+    <div class="card">
+        <h1>Cart</h1>
+        <ul class="listCard">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <div class="checkOut">
+            <div class="total">Total: ₹0</div>
+            <div class="closeShopping">Close</div>
+            <div class="checkout-btn">Checkout</div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

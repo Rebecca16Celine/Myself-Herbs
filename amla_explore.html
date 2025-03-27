@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Amla - Nutural Herbs</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Remove bullet points from unordered lists */
+        .contact-content ul {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 0; /* Removes default padding */
+        }
+
+        .contact-content li {
+            margin-bottom: 10px; /* Adds spacing between list items */
+        }
+
+        /* Style for the Amla image with a frame */
+        .amla-image {
+            width: 100%; /* Make the image responsive */
+            max-width: 400px; /* Limit the maximum width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 15px; /* Rounded corners */
+            border: 8px solid #bfbfbf; /* Light gray border */
+            padding: 5px; /* Space between image and border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            display: block; /* Center the image */
+            margin: 20px auto; /* Center the image and add spacing */
+            background-color: #155328; /* Background color for padding */
+        }
+
+        /* Adjust the header spacing */
+        header h1 {
+            margin-bottom: 20px; /* Add spacing below the title */
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem; /* Increase font size */
+            color: white; /* White color for the heading */
+            text-align: center; /* Center the heading */
+        }
+
+        /* Style for the back button */
+        .back-button {
+            font-weight: bold; /* Make the text bold */
+            color: white; /* White text color */
+            text-decoration: none; /* Remove underline */
+            margin-right: 15px; /* Add spacing between the back button and other links */
+            font-size: 16px; /* Adjust font size */
+        }
+
+        .back-button:hover {
+            color: #032308; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="menu">
+            <!-- Back Button -->
+            <a href="#" onclick="goBack()" class="back-button">← Back</a>
+            <a href="./main.html">Home</a>
+            <a href="./About Us.html">About</a>
+            <a href="./contact.html">Contact us</a>
+            <a href="./sign.html">Sign up</a>
+            <a href="./log in.html">Log in</a>
+            <a href="#" id="logout-link" style="display: none;">Logout</a>
+        </div>
+        <div class="shopping">
+            <img src="basket.png">
+            <span class="quantity">0</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <!-- Space for logo -->
+            <img src="logo_white.png" alt="Nutural Herbs Logo" class="logo">
+            <h1>Amla - Phyllanthus Emblica</h1>
+        </header>
+
+        <div class="contact-content">
+            <!-- Amla Image with Frame -->
+            <img src="amla1.png" alt="Amla" class="amla-image">
+
+            <h2>Benefits of Amla</h2>
+            <p>Amla is a powerful fruit known for its numerous health benefits. Here are some of the key benefits:</p>
+            <ul>
+                <li><strong>🌿 Detoxifies the Body:</strong> Cleanses the liver and purifies blood, enhancing immune response.</li>
+                <li><strong>❤️ Supports Gut Health:</strong> Promotes healthy gut bacteria, crucial for immune regulation.</li>
+                <li><strong>🌟 Improves Digestion:</strong> Stimulates digestive enzymes and relieves indigestion.</li>
+                <li><strong>🌿 Reduces Bloating:</strong> Eases gas and promotes a healthy gut.</li>
+                <li><strong>🦠 Antimicrobial Properties:</strong> Fights bacteria and viruses, reducing the risk of infections.</li>
+            </ul>
+
+            <h2>Ways to Use Amla</h2>
+            <p>Amla can be used in various forms to harness its benefits:</p>
+            <ul>
+                <li><strong>✅ Amla Juice:</strong> For a Vitamin C boost.</li>
+                <li><strong>✅ Amla & Honey Mix:</strong> For antioxidant support.</li>
+                <li><strong>✅ Amla & Ginger Tea:</strong> For cold and cough relief.</li>
+            </ul>
+
+            <h2>Precautions</h2>
+            <p>While Amla is beneficial, it's important to use it wisely:</p>
+            <ul>
+                <li><strong>🚫 Use in Moderation:</strong> Excessive consumption may raise acidity or cause an upset stomach.</li>
+                <li><strong>⚠️ Blood Sugar Levels:</strong> It may lower blood sugar levels, so use cautiously if diabetic.</li>
+                <li><strong>⚠️ Dehydration:</strong> Overuse may lead to dehydration due to its diuretic properties.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function for the back button
+        function goBack() {
+            window.history.back(); // Go back to the previous page
+        }
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+body {
+    background-color: #155328;
+    color: white;
+    font-family: 'Times New Roman', sans-serif;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    transition: 0.5s;
+}
+
+/* Top menu bar styling */
+.top-bar {
+    background-color: #61ae35;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: larger;
+}
+
+/* Menu links styling */
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #032308;
+}
+
+/* Categories container */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* Increased gap to allow space for scaling */
+    padding: 18px; /* Optional: adds breathing room around the group */
+    font-size: 100%;
+}
+
+/* Individual category buttons */
+.category {
+    background-color: #61ae35;
+    padding: 15px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* So z-index works */
+    transform-origin: center center; /* Makes scaling grow from center */
+}
+
+/* Hover effect */
+.category:hover {
+    transform: scale(1.2); /* Scale up */
+    z-index: 2; /* Bring to front so it doesn't get overlapped */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for emphasis */
+}
+
+/* Shopping cart styling */
+.shopping {
+    position: fixed;
+    top: 3px;
+    right: 5px;
+    width: 50px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #61ae35;
+    border-radius: 35%;
+    padding: 5px;
+    position: relative;
+    text-align: right;
+}
+
+.shopping img {
+    width: 75%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.shopping .quantity {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: rgb(0, 50, 12);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping:hover {
+    transform: scale(1.2);
+}
+
+/* Product List */
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 35px;
+    row-gap: 35px;
+    margin-top: 50px;
+}
+
+.list .item {
+    text-align: center;
+    background-color: #61ae35;
+    color: #ffffff;
+    padding: 20px; /* Increased padding to accommodate buttons */
+    border-radius: 15%;
+    letter-spacing: 1px;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.list .item img {
+    width: 90%;
+    height: 270px;
+    border-radius: 15%;
+    object-fit: cover;
+}
+
+.list .item .title {
+    font-weight: 600;
+}
+
+.list .item .price {
+    margin: 10px;
+}
+
+/* Button container for Add to Cart and Explore */
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%; /* Ensure buttons take full width of the card */
+}
+
+.button-container button {
+    flex: 1; /* Make buttons take equal space */
+    padding: 8px 12px; /* Adjust padding for better fit */
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #242424;
+    color: white;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure buttons do not overflow */
+    font-family: 'Times New Roman', serif; /* Set font to Times New Roman */
+}
+
+.button-container button:hover {
+    background-color: #d3e4ba;
+    color: black;
+}
+
+.button-container .explore-btn {
+    background-color: #bfbfbf;
+    color: #032308;
+    font-family: 'Times New Roman', serif; /* Set font to Times New Roman */
+}
+
+.button-container .explore-btn:hover {
+    background-color: #a3a3a3;
+}
+
+/* Shopping Cart */
+.card {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 500px;
+    height: 100%; /* Make the cart cover the full height of the page */
+    background-color: #61ae35;
+    transition: 0.5s;
+    font-size: 155%;
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.active .card {
+    left: calc(100% - 500px);
+}
+
+.card h1 {
+    color: #e7efe1;
+    font-size: 300%;
+    font-weight: 250;
+    margin: 0;
+    padding: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.card .checkOut {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three buttons in a row */
+    background-color: #b7d38e;
+}
+
+.card .checkOut div {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-right: 1px solid #013206; /* Add a border between buttons */
+}
+
+.card .checkOut div:last-child {
+    border-right: none; /* Remove border for the last button */
+}
+
+.card .checkOut .total {
+    background-color: #b7d38e;
+    color: #000000;
+}
+
+.card .checkOut .closeShopping {
+    background-color: #013206;
+    color: #ffffff;
+}
+
+.card .checkOut .checkout-btn {
+    background-color: #b7d38e; /* Same color as Total Price button */
+    color: #000000;
+}
+
+/* Cart Items */
+.listCard li {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #000000;
+    row-gap: 10px;
+    padding: 10px;
+}
+
+.listCard li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listCard li img {
+    width: 90%;
+}
+
+.listCard li button {
+    background-color: rgba(179, 175, 175, 0.743);
+    border: none;
+}
+
+.listCard .count {
+    margin: 0 10px;
+}
+
+/* About Us Section */
+.about-content {
+    background-color: #61ae35;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 20px;
+    color: #ffffff;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-content h2 {
+    color: #013206;
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-content li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Logo Styling */
+.logo {
+    display: block;
+    margin: 30px auto;
+    width: 150px;
+    height: auto;
+    border-radius: 20%;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Us Page Content */
+.contact-content {
+    background-color: #61ae35;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 20px;
+    color: #ffffff;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-content h2 {
+    color: #013206;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.contact-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Contact Info Section */
+.contact-info {
+    background-color: #155328;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #e7efe1;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-info li strong {
+    color: #b7d38e;
+}
+
+/* Style for the back button */
+.back-button {
+    font-weight: bold; /* Make the text bold */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    margin-right: 15px; /* Add spacing between the back button and other links */
+    font-size: 16px; /* Adjust font size */
+}
+
+.back-button:hover {
+    color: #032308; /* Change color on hover */
+}
+
+/* Button styles */
+.list .item button {
+    background-color: #242424;
+    color: #fff;
+    width: 100%; /* Make buttons take full width */
+    padding: 7px;
+    cursor: pointer;
+    border: none;
+    border-radius: 42%;
+    margin-top: 10px; /* Add spacing between buttons */
+    font-family: 'Times New Roman', serif; /* Keep font consistent */
+    display: block; /* Ensure buttons stack vertically */
+}
+
+.list .item button:hover {
+    background-color: #d3e4ba;
+    color: black;
+}
+
+/* Optional: Style for the Explore button */
+.list .item .explore-btn {
+    background-color: #bfbfbf;
+    color: #032308;
+}
+
+.list .item .explore-btn:hover {
+    background-color: #a3a3a3;
+}
